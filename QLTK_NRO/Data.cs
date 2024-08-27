@@ -34,10 +34,7 @@ namespace QLTK_NRO
 
         public void ExportFile()
         {
-            //for (int i = 1; i < this.DataGridView.Rows.Count; i++)
-            //{
-            //    this.DataGridView.Rows[i].Cells[1].Value = i + 1;
-            //}
+            
             TextWriter textWriter = new StreamWriter("Account.ini");
             for (int j = 0; j < this.DataGridView.Rows.Count; j++)
             {
@@ -50,15 +47,9 @@ namespace QLTK_NRO
             textWriter.Close();
         }
         public void LoadFile()
-        {
-            //this.DataGridView.Rows.Clear();
+        {            
             string[] array = File.ReadAllLines("Account.ini");
-            #region forData
-            //for (int i = 0; i < array.Length; i++)
-            //{
-            //    string[] array2 = array[i].Split('|');
-            //    this.DataGridView.Rows.Add(new object[]{ false, array2[0],  array2[1], array2[2],array2[3],array2[4], array2[5], });
-            //}
+            #region forData         
             #endregion
             foreach (string row in array)
             {

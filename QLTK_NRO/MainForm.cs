@@ -89,8 +89,7 @@ namespace QLTK_NRO
         public void findText(int index)
         {
             int position = dataGridView.Rows[index].Cells[4].Value.ToString().IndexOf("/");
-            string mapKey = dataGridView.Rows[index].Cells[4].Value.ToString().Substring(0, position);
-            //int mapInfo = map_cbb.FindString(mapKey);
+            string mapKey = dataGridView.Rows[index].Cells[4].Value.ToString().Substring(0, position);         
             if (File.Exists("Map.ini"))
             {
                 string[] _char = File.ReadAllLines("Map.ini");
@@ -269,20 +268,11 @@ namespace QLTK_NRO
         private void Form1_Load(object sender, EventArgs e)
         {
             new Data(dataGridView, username).LoadFile();
-        }
-        //public static string RepeatStrBuilder(string text, int count)
-        //{
-        //    return new StringBuilder(text.Length * count)
-        //        .Insert(0, text, count)
-        //        .ToString();
-        //}
+        }     
         #endregion
-
         #region CRUD
         private void addBtn_Click(object sender, EventArgs e)
-        {           
-            //string pattern = @"[?\w+-?\w+]?";          
-            //Match match = Regex.Match(username.Text.ToString(), pattern);         
+        {                               
             string idxSever = indexServer.Text.Substring(7);
             if (checkAdd(true))
             {
@@ -310,8 +300,7 @@ namespace QLTK_NRO
                                 numberOfTimes = up.Length - countI.Length;
                                 if (numberOfTimes != 0)
                                 {
-                                    string alphabets = string.Concat(Enumerable.Repeat(charInsert, numberOfTimes));
-                                    //data = strFirst + RepeatStrBuilder(charInsert,numberOfTimes) + i + strEnd;
+                                    string alphabets = string.Concat(Enumerable.Repeat(charInsert, numberOfTimes));                             
                                     data = strFirst + alphabets + i + strEnd;
                                 }
                                 else
@@ -385,8 +374,7 @@ namespace QLTK_NRO
                 }
             }
 
-            new Data(dataGridView, username).ExportFile();
-            //dataGridView.Focus();
+            new Data(dataGridView, username).ExportFile();        
         }
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
